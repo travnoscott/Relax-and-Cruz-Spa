@@ -3,11 +3,17 @@
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: SAMEORIGIN
 
-/styles.css
+/*.css
   Cache-Control: public, max-age=86400
 
-/main.js
+/*.js
   Cache-Control: public, max-age=86400
 
-/images/*
+/*.jpg
+  Cache-Control: public, max-age=604800
+
+/*.png
+  Cache-Control: public, max-age=604800
+
+/*.mp4
   Cache-Control: public, max-age=604800

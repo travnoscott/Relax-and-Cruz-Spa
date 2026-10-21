@@ -4,7 +4,7 @@ Static site: plain HTML, CSS and one small script. No build step. Booking and pa
 
 ## Files
 
-Every page is its own file at the top level. There are no page folders, so everything uploads to GitHub in one drag.
+Everything is at the top level: pages, photos and videos. There are no folders, so the whole site uploads to GitHub in one drag.
 
 ```
 index.html               Homepage
@@ -20,7 +20,7 @@ shop.html                /shop
 contact.html             /contact
 styles.css               Shared styles for every page
 main.js                  Mobile menu, offer popup, price finder (prices live here)
-images/                  Photos and videos
+*.jpg, *.mp4             Photos and videos
 logo.png, logo-white.png, favicon.png, apple-touch-icon.png, og-image.jpg
 _redirects               Old URLs to new pages (Cloudflare Pages / Netlify)
 _headers                 Security and caching headers
@@ -45,8 +45,8 @@ The preview at `thetlfgroupllc-source.github.io/Relax-and-Cruz-Spa/` works becau
 
 ## Before launch
 
-- [ ] Hero photo: replace the placeholder in `index.html` (search `TODO`) with `/images/hero.jpg`
-- [ ] Portrait of Crystal: replace the placeholder with `/images/crystal.jpg`
+- [ ] Hero photo: replace the placeholder in `index.html` (search `TODO`) with `hero.jpg`
+- [ ] Portrait of Crystal: replace the placeholder with `crystal.jpg`
 - [ ] Before and after photos: underarm and chin, plus the session counts
 - [ ] Crystal's bio in her own words
 - [x] Credentials: license numbers filled in; laser certification and supervising physician left off the site at Crystal's request (Oct 20, 2026).
@@ -59,7 +59,7 @@ The preview at `thetlfgroupllc-source.github.io/Relax-and-Cruz-Spa/` works becau
 
 ## Adding a page
 
-Save it at the top level as `page-name.html`. Link shared files as `styles.css`, `main.js` and `images/...`, and link other pages without `.html` (`href="contact"`). Give it its own title, description and canonical URL (`https://www.relaxandcruzspa.com/page-name`), and add it to `sitemap.xml`.
+Save it at the top level as `page-name.html`. Link shared files as `styles.css`, `main.js` and the photo's file name (`photo.jpg`), and link other pages without `.html` (`href="contact"`). Give it its own title, description and canonical URL (`https://www.relaxandcruzspa.com/page-name`), and add it to `sitemap.xml`.
 
 ## Updating prices
 

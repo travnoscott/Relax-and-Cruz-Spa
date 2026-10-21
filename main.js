@@ -93,7 +93,7 @@
       '<div class="promo-card" role="dialog" aria-modal="true" aria-labelledby="promo-title">' +
         '<button class="promo-close" type="button" aria-label="Close">&times;</button>' +
         '<div class="promo-photo">' +
-          '<img src="' + base + 'images/offer-hero.jpg" alt="Laser hair removal on a client\u2019s legs" width="720" height="1020">' +
+          '<img src="' + base + 'offer-hero.jpg" alt="Laser hair removal on a client\u2019s legs" width="720" height="1020">' +
           '<p class="promo-ribbon">October only &middot; ' + countdown + '</p>' +
           '<p class="promo-badge"><span>20%</span>off</p>' +
         '</div>' +
