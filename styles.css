@@ -666,3 +666,37 @@ p a, li a, dd a, figcaption a { padding-block: 4px; }
     padding-block: 14px; border-top: 1px solid var(--rule);
   }
 }
+
+/* ===== Menu: names with a short hint, and a green leaf that glides between them ===== */
+.nav a { display: flex; flex-direction: column; text-decoration: none; }
+.nav a:hover, .nav a[aria-current="page"] { text-decoration: none; color: var(--plum-ink); }
+.nav-name { font-weight: 700; color: var(--plum-ink); }
+.nav-hint { font: italic 500 14px/1.25 var(--display); color: var(--text); }
+.nav a:hover .nav-hint, .nav a.is-lit .nav-hint { color: var(--plum-ink); }
+.nav-glider { display: none; }
+@media (min-width: 1181px) {
+  .header-bar .nav { position: relative; gap: 4px; padding-block: 8px 10px; }
+  .nav a { position: relative; z-index: 1; align-items: center; gap: 1px; padding: 9px 18px 10px; }
+  .nav-name { font-size: 17.5px; letter-spacing: 0.005em; }
+  .nav-glider {
+    display: block; position: absolute; z-index: 0; left: 0; top: 0; width: 0; height: 0;
+    background: var(--leaf); border-radius: 4px 20px 4px 20px; pointer-events: none; opacity: 0;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 8px 18px -12px rgba(59, 14, 46, 0.45);
+    transition:
+      transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1), width 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
+      height 0.45s cubic-bezier(0.2, 0.7, 0.2, 1), border-radius 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
+      opacity 0.25s ease;
+  }
+  .nav-glider.is-on { opacity: 1; }
+  .nav-glider.flip { border-radius: 20px 4px 20px 4px; }
+  .nav-glider.no-anim { transition: none; }
+}
+@media (max-width: 1180px) {
+  .nav a { gap: 2px; }
+  .nav a[aria-current="page"] {
+    background: var(--leaf); border-bottom-color: transparent;
+    margin-inline: -14px; padding-inline: 14px; border-radius: 4px 18px 4px 18px;
+  }
+  .nav a[aria-current="page"] .nav-hint { color: var(--plum-ink); }
+}
+@media (prefers-reduced-motion: reduce) { .nav-glider { transition: opacity 0.2s ease; } }

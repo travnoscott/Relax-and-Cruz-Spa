@@ -11,12 +11,47 @@
       toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     });
     nav.addEventListener('click', function (e) {
-      if (e.target.tagName === 'A') {
+      if (e.target.closest('a')) {
         nav.classList.remove('is-open');
         toggle.setAttribute('aria-expanded', 'false');
         toggle.setAttribute('aria-label', 'Open menu');
       }
     });
+  }
+
+  // Desktop menu: a green leaf rests on the current page and glides to the link being pointed at.
+  // Its points swap sides with the direction it moves, like the logo leaf turning.
+  if (nav) {
+    var glider = document.createElement('span');
+    glider.className = 'nav-glider';
+    glider.setAttribute('aria-hidden', 'true');
+    nav.insertBefore(glider, nav.firstChild);
+    var navLinks = [].slice.call(nav.querySelectorAll('a'));
+    var current = nav.querySelector('[aria-current="page"]');
+    var lastX = null;
+    var glideTo = function (a) {
+      navLinks.forEach(function (l) { l.classList.toggle('is-lit', l === a); });
+      if (!a) { glider.classList.remove('is-on'); return; }
+      if (!glider.classList.contains('is-on')) glider.classList.add('no-anim');
+      var x = a.offsetLeft;
+      glider.classList.toggle('flip', lastX !== null && x < lastX);
+      lastX = x;
+      glider.style.transform = 'translate(' + x + 'px, ' + a.offsetTop + 'px)';
+      glider.style.width = a.offsetWidth + 'px';
+      glider.style.height = a.offsetHeight + 'px';
+      glider.offsetWidth; // apply the jump before turning the glide back on
+      glider.classList.remove('no-anim');
+      glider.classList.add('is-on');
+    };
+    navLinks.forEach(function (a) {
+      a.addEventListener('mouseenter', function () { glideTo(a); });
+      a.addEventListener('focus', function () { glideTo(a); });
+    });
+    nav.addEventListener('mouseleave', function () { glideTo(current); });
+    nav.addEventListener('focusout', function (e) { if (!nav.contains(e.relatedTarget)) glideTo(current); });
+    var rest = function () { glider.classList.remove('is-on'); glideTo(current); };
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(rest); else rest();
+    window.addEventListener('resize', rest);
   }
 
   // Homepage intro video: plays muted on load; the button restarts it with sound.
