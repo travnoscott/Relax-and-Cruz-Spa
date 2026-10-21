@@ -573,3 +573,96 @@ p a, li a, dd a, figcaption a { padding-block: 4px; }
   [data-fold].is-folded, .is-folded-item { display: none !important; }
 }
 @media (min-width: 721px) { .fold-btn { display: none !important; } }
+
+/* ===== Buttons: cut like the leaf in her logo ===== */
+/* Pointed corners sit opposite each other, like the logo leaf. On hover the leaf turns
+   (the points swap corners). Main actions are set in the Bodoni italic from the offer popup;
+   secondary actions stay in Albert Sans so the two read as different weights of decision. */
+.btn {
+  --cut: 4px;
+  --round: 20px;
+  gap: 10px;
+  border-width: 1.5px;
+  border-radius: var(--cut) var(--round) var(--cut) var(--round);
+  letter-spacing: 0.005em;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 0% 100%;
+  transition:
+    border-radius 0.4s cubic-bezier(0.2, 0.7, 0.2, 1),
+    background-size 0.4s cubic-bezier(0.2, 0.7, 0.2, 1),
+    background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    box-shadow 0.25s ease, transform 0.15s ease;
+}
+.btn:hover { border-radius: var(--round) var(--cut) var(--round) var(--cut); }
+.btn:active { transform: translateY(1px); }
+
+/* Main actions: plum on white, green on plum */
+.btn-plum, .btn-leaf {
+  font-family: var(--display); font-style: italic; font-weight: 600;
+  font-size: 20px; letter-spacing: 0.01em;
+}
+.btn-plum {
+  background-color: var(--plum);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 12px 22px -14px rgba(59, 14, 46, 0.75);
+}
+.btn-plum:hover {
+  background-color: var(--plum-ink);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 16px 26px -14px rgba(59, 14, 46, 0.85);
+}
+.btn-leaf {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 12px 22px -14px rgba(20, 4, 15, 0.8);
+}
+.btn-plum::after, .btn-leaf::after {
+  content: "\2192";
+  font-family: var(--body); font-style: normal; font-weight: 500; font-size: 18px; line-height: 1;
+  transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.btn-plum:hover::after, .btn-leaf:hover::after { transform: translateX(4px); }
+
+/* Secondary actions: a hairline that fills from the left */
+/* (Repeats the colour and image on hover because the older hover rules use the background shorthand.) */
+.btn-outline, .btn-outline:hover {
+  background-color: var(--white);
+  background-image: linear-gradient(var(--tint), var(--tint));
+}
+.btn-outline { border-color: var(--plum-line); }
+.btn-outline:hover { background-size: 100% 100%; border-color: var(--plum); color: var(--plum-ink); }
+.btn-ghost, .btn-ghost:hover {
+  background-color: transparent;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12));
+}
+.btn-ghost { border-color: rgba(217, 178, 203, 0.7); }
+.btn-ghost:hover { background-size: 100% 100%; border-color: var(--white); }
+
+/* Tight spots keep the shape but drop the arrow */
+.header-actions .btn-plum, .mobile-bar .btn-plum { font-size: 18px; }
+.header-actions .btn::after, .mobile-bar .btn::after, .promo-cta::after { content: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn, .btn::after { transition: none; }
+  .btn:hover { border-radius: var(--cut) var(--round) var(--cut) var(--round); }
+}
+
+/* ===== Header: the logo never shrinks ===== */
+/* The logo, the seven links and both booking buttons don't fit on one desktop row,
+   so on wide screens the links move to a second row and the logo gets its full width. */
+.brand { flex-shrink: 0; }
+.brand img { max-width: none; }
+@media (min-width: 1181px) {
+  .header-bar {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: "brand . actions" "nav nav nav";
+    row-gap: 12px;
+    padding-block: 18px 0;
+  }
+  .brand { grid-area: brand; }
+  .brand img { height: 92px; }
+  .header-actions { grid-area: actions; }
+  .header-phone { display: inline; }
+  .nav {
+    grid-area: nav; justify-content: center; gap: 8px 40px;
+    padding-block: 14px; border-top: 1px solid var(--rule);
+  }
+}
