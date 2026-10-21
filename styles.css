@@ -669,9 +669,10 @@ p a, li a, dd a, figcaption a { padding-block: 4px; }
 
 /* ===== Menu: names with a short hint, and a green leaf that glides between them ===== */
 .nav a { display: flex; flex-direction: column; text-decoration: none; }
-.nav a:hover, .nav a[aria-current="page"] { text-decoration: none; color: var(--plum-ink); }
-.nav-name { font-weight: 700; color: var(--plum-ink); }
-.nav-hint { font: italic 500 14px/1.25 var(--display); color: var(--text); }
+.nav a:hover, .nav a[aria-current="page"] { text-decoration: none; color: var(--plum); }
+.nav-name { font-weight: 700; color: var(--plum); }
+.nav-hint { font: italic 500 14px/1.25 var(--display); color: var(--plum-line); }
+/* On the green leaf the hint darkens so it stays easy to read */
 .nav a:hover .nav-hint, .nav a.is-lit .nav-hint { color: var(--plum-ink); }
 .nav-glider { display: none; }
 @media (min-width: 1181px) {
