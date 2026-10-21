@@ -118,9 +118,8 @@ p { margin: 0; }
   border: 2px solid var(--rule); background: var(--white); color: var(--plum);
   align-items: center; justify-content: center; padding: 0; cursor: pointer;
 }
-/* The phone number lives in the mobile bar and the booking section; the header shows it only on very wide screens. */
+/* The phone number lives in the mobile bar and the booking section; the header has room only for the two booking buttons. */
 .header-phone { display: none; }
-@media (min-width: 1500px) { .header-phone { display: inline; } }
 @media (max-width: 1180px) {
   .brand img { height: 60px; }
   .menu-toggle { display: inline-flex; }
