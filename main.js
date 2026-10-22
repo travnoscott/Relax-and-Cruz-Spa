@@ -7,19 +7,19 @@
   // empty opens the full booking list, so a missing link never breaks a button.
   var BOOK_ALL = 'https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services';
   var BOOKING = {
-    'consult': '',           // Free Consultation (every "Book a free consult" button)
-    'laser': '',             // Laser hair removal, any size (laser, ingrown hair and men's pages)
-    'laser-xs': '',          // Laser: Extra-Small Areas (price finder, "Book this area")
-    'laser-s': '',           // Laser: Small Areas
-    'laser-m': '',           // Laser: Medium Areas
-    'laser-l': '',           // Laser: Large Areas
-    'laser-xl': '',          // Laser: Extra-Large Areas
-    'laser-fb': '',          // Laser: Full Body
-    'electrolysis': '',      // Electrolysis (Permanent Hair Removal)
+    'consult': 'https://app.squareup.com/appointments/buyer/widget/gktj812dom61am/LR7VH9PK37BJG',           // Free Consultation (every "Book a free consult" button)
+    'laser': 'https://app.squareup.com/appointments/buyer/widget/mukyns53urogtr/LR7VH9PK37BJG',             // Laser hair removal, any size (laser, ingrown hair and men's pages)
+    'laser-xs': 'https://app.squareup.com/appointments/buyer/widget/jvnb8mbt8ku5ls/LR7VH9PK37BJG',          // Laser: Extra-Small Areas (price finder, "Book this area")
+    'laser-s': 'https://app.squareup.com/appointments/buyer/widget/eyxslovgyuizz6/LR7VH9PK37BJG',           // Laser: Small Areas
+    'laser-m': 'https://app.squareup.com/appointments/buyer/widget/q191xbxhlfomoa/LR7VH9PK37BJG',           // Laser: Medium Areas
+    'laser-l': 'https://app.squareup.com/appointments/buyer/widget/968xy3w4byqz1q/LR7VH9PK37BJG',           // Laser: Large Areas
+    'laser-xl': 'https://app.squareup.com/appointments/buyer/widget/dtcr3r7676uyll/LR7VH9PK37BJG',          // Laser: Extra-Large Areas
+    'laser-fb': 'https://app.squareup.com/appointments/buyer/widget/tojyxuzdnwwz55/LR7VH9PK37BJG',          // Laser: Full Body
+    'electrolysis': 'https://app.squareup.com/appointments/buyer/widget/39tnbm4lon5k2t/LR7VH9PK37BJG',      // Electrolysis (Permanent Hair Removal)
     'facials': '',           // Facials and Peels
-    'lymphatic': '',         // Post-Op Lymphatic Massage
-    'massage': '',           // Swedish Massage
-    'body-contouring': '',   // Body Contouring
+    'lymphatic': 'https://app.squareup.com/appointments/buyer/widget/yp293sdkwsbvwz/LR7VH9PK37BJG',         // Post-Op Lymphatic Massage
+    'massage': 'https://app.squareup.com/appointments/buyer/widget/w6wqzu05cqj1ck/LR7VH9PK37BJG',           // Swedish Massage
+    'body-contouring': 'https://app.squareup.com/appointments/buyer/widget/1j0wfes92udquj/LR7VH9PK37BJG',   // Body Contouring
     'all': ''                // Homepage, contact and shop buttons: keep empty for the full list
   };
   var bookLink = function (key) { return BOOKING[key] || BOOK_ALL; };
