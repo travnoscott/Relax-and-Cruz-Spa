@@ -16,7 +16,7 @@
     'laser-xl': 'https://app.squareup.com/appointments/buyer/widget/dtcr3r7676uyll/LR7VH9PK37BJG',          // Laser: Extra-Large Areas
     'laser-fb': 'https://app.squareup.com/appointments/buyer/widget/tojyxuzdnwwz55/LR7VH9PK37BJG',          // Laser: Full Body
     'electrolysis': 'https://app.squareup.com/appointments/buyer/widget/39tnbm4lon5k2t/LR7VH9PK37BJG',      // Electrolysis (Permanent Hair Removal)
-    'facials': '',           // Facials and Peels
+    'facials': 'https://app.squareup.com/appointments/buyer/widget/bwyf097mkj30o5/LR7VH9PK37BJG',           // Facials and Peels, plus LED Light Therapy
     'lymphatic': 'https://app.squareup.com/appointments/buyer/widget/yp293sdkwsbvwz/LR7VH9PK37BJG',         // Post-Op Lymphatic Massage
     'massage': 'https://app.squareup.com/appointments/buyer/widget/w6wqzu05cqj1ck/LR7VH9PK37BJG',           // Swedish Massage
     'body-contouring': 'https://app.squareup.com/appointments/buyer/widget/1j0wfes92udquj/LR7VH9PK37BJG',   // Body Contouring
