@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&display=swap">
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=7">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -117,7 +117,7 @@
 
 <header class="site-header">
   <div class="wrap header-bar">
-    <a class="brand" href="./"><img src="logo.png" alt="Relax &amp; Cruz Spa" width="276" height="162"></a>
+    <a class="brand" href="./"><img src="logo.png" alt="Relax &amp; Cruz Spa" width="276" height="162" decoding="async"></a>
     <nav class="nav" id="site-nav" aria-label="Main">
       <a href="laser-hair-removal"><span class="nav-name">Laser</span><span class="nav-hint">every skin tone</span></a>
       <a href="electrolysis"><span class="nav-name">Electrolysis</span><span class="nav-hint">permanent, any hair</span></a>
@@ -129,8 +129,8 @@
     </nav>
     <div class="header-actions">
       <a class="header-phone" href="tel:+19547749833">(954) 774-9833</a>
-      <a class="btn btn-outline" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book now</a>
-      <a class="btn btn-plum" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book a free consult</a>
+      <a data-book="facials" class="btn btn-outline" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book now</a>
+      <a data-book="consult" class="btn btn-plum" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book a free consult</a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
@@ -145,10 +145,15 @@
     <div class="hero-copy">
       <p class="crumbs"><a href="./">Home</a> / Facials and peels</p>
       <h1 class="h1">Facials and peels for every skin tone.</h1>
+      <ul class="trust" aria-label="Why clients trust us">
+        <li><span class="trust-stars" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><a href="https://www.google.com/maps/search/?api=1&amp;query=Relax%20%26%20Cruz%20Spa&amp;query_place_id=ChIJVxkaC0UH2YgR4lUdHG4DhzY" target="_blank" rel="noopener">4.8 stars from 162 Google reviews</a></li>
+        <li>Since 2019</li>
+        <li><a href="#licenses">Florida licensed</a></li>
+      </ul>
       <p class="lede">For dark spots, uneven tone, acne and the marks razor bumps leave behind. Crystal picks the treatment and the strength for your skin, with extra care for deeper skin.</p>
       <div class="btn-row">
-        <a class="btn btn-plum" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book a free consult</a>
-        <a class="btn btn-outline" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book now</a>
+        <a data-book="consult" class="btn btn-plum" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book a free consult</a>
+        <a data-book="facials" class="btn btn-outline" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book now</a>
         <a class="btn btn-outline" href="#menu">See the menu</a>
       </div>
       <dl class="facts">
@@ -206,7 +211,7 @@
         <div class="menu-item"><p class="name">RF skin tightening</p><p class="desc">Add radiofrequency skin tightening to any facial.</p><p class="meta">15 min · $20</p></div>
         <div class="menu-item"><p class="name">HydroJelly mask</p><p class="desc">Add a hydrating peel-off mask to any facial.</p><p class="meta">10 min · $10</p></div>
       </div>
-      <video class="photo leaf-md menu-video" src="led-therapy.mp4" poster="led-therapy.jpg" autoplay muted loop playsinline preload="metadata" aria-label="A client relaxing under red and blue Celluma LED light"></video>
+      <video class="photo leaf-md menu-video" data-src="led-therapy.mp4" poster="led-therapy.jpg" autoplay muted loop playsinline preload="none" aria-label="A client relaxing under red and blue Celluma LED light"></video>
     </div>
   </div>
     <div class="price-notes">
@@ -224,11 +229,11 @@
     </div>
     <div class="results">
       <figure class="result">
-        <img src="ba-hydrofacial.jpg" alt="A client's face before and after a Hydro Facial" width="923" height="670" loading="lazy">
+        <img src="ba-hydrofacial.jpg" alt="A client's face before and after a Hydro Facial" width="923" height="670" loading="lazy" decoding="async">
         <figcaption>Hydro Facial Glow, before and after</figcaption>
       </figure>
       <figure class="result">
-        <img src="ba-coral-peel.jpg" alt="A client's cheek with dark spots before, and clearer, more even skin after one Coral Peel" width="1000" height="758" loading="lazy">
+        <img src="ba-coral-peel.jpg" alt="A client's cheek with dark spots before, and clearer, more even skin after one Coral Peel" width="1000" height="758" loading="lazy" decoding="async">
         <figcaption>Organic Coral Peel, before and after one peel</figcaption>
       </figure>
     </div>
@@ -238,7 +243,7 @@
 <section class="section">
   <div class="wrap split">
     <div>
-      <img class="photo leaf-rev about-frame about-video" style="object-position: 50% 0%" src="crystal-bio.jpg" alt="Crystal Cruz beside the spa's Candela GentleMax Pro Plus laser" width="720" height="956" loading="lazy">
+      <img class="photo leaf-rev about-frame about-video" style="object-position: 50% 0%" src="crystal-bio.jpg" alt="Crystal Cruz beside the spa's Candela GentleMax Pro Plus laser" width="720" height="956" loading="lazy" decoding="async">
     </div>
     <div class="stack" style="gap:24px">
       <h2 class="h2">Your skin, in one pair of hands</h2>
@@ -283,12 +288,12 @@
   <div class="wrap">
     <div class="book-grid">
       <div class="stack" style="gap:24px">
-        <img src="logo-white.png" alt="" width="276" height="162" style="height:96px; width:auto; align-self:flex-start">
+        <img src="logo-white.png" alt="" width="276" height="162" style="height:96px; width:auto; align-self:flex-start" decoding="async">
         <h2 class="book-title">Start with a free consult.</h2>
         <p class="on-plum" style="font-size:20px; max-width:520px">Show Crystal what you want to change, and leave knowing which facial or peel fits your skin.</p>
         <div class="btn-row">
-          <a class="btn btn-leaf" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book a free consult</a>
-          <a class="btn btn-ghost" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book now</a>
+          <a data-book="consult" class="btn btn-leaf" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book a free consult</a>
+          <a data-book="facials" class="btn btn-ghost" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book now</a>
           <a class="btn btn-ghost" href="tel:+19547749833">Call (954) 774-9833</a>
         </div>
           <a class="cherry-note" href="https://pay.withcherry.com/relaxandcruzspa-llc">Pay over time with Cherry — as low as 0% interest for 12 months</a>
@@ -313,7 +318,7 @@
         <a href="contact">Contact</a>
       </nav>
       <p class="legal">Laser provides permanent hair reduction, and results vary by person. Electrolysis provides permanent hair removal.</p>
-      <p class="legal">Florida licenses: massage therapist MA 93506, massage establishment MM 41929, electrologist EO 4649, electrolysis facility EP 1453, facial specialist FB9770280, salon CE10030767.</p>
+      <p class="legal" id="licenses">Florida licenses: massage therapist MA 93506, massage establishment MM 41929, electrologist EO 4649, electrolysis facility EP 1453, facial specialist FB9770280, salon CE10030767.</p>
     </footer>
   </div>
 </section>
@@ -322,10 +327,10 @@
 
 <div class="mobile-bar">
   <a class="btn btn-outline" href="tel:+19547749833">Call</a>
-  <a class="btn btn-outline" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book now</a>
-  <a class="btn btn-plum" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Free consult</a>
+  <a data-book="facials" class="btn btn-outline" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book now</a>
+  <a data-book="consult" class="btn btn-plum" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Free consult</a>
 </div>
 
-<script src="main.js?v=3" defer></script>
+<script src="main.js?v=5" defer></script>
 </body>
 </html>

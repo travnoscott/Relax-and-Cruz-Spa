@@ -61,6 +61,10 @@ The preview at `thetlfgroupllc-source.github.io/Relax-and-Cruz-Spa/` works becau
 
 Save it at the top level as `page-name.html`. Link shared files as `styles.css`, `main.js` and the photo's file name (`photo.jpg`), and link other pages without `.html` (`href="contact"`). Give it its own title, description and canonical URL (`https://www.relaxandcruzspa.com/page-name`), and add it to `sitemap.xml`.
 
+## Booking links
+
+Every Book button has a `data-book` name saying which service it books (`consult`, `laser`, `electrolysis`, `facials`, `lymphatic`, `massage`, `body-contouring`, and `laser-xs` to `laser-fb` for the price finder's "Book this area"). The Square links themselves live in one list at the top of `main.js` (`BOOKING`). Paste a service's own Square booking link next to its name and every button for that service goes straight there. Anything left empty opens the full booking list. After changing `main.js`, bump `main.js?v=` on every page so visitors get the new links.
+
 ## Updating prices
 
 Open `main.js`. Prices are in `TIERS`, one line per size. Areas and their $499 eligibility notes are in `AREAS`. The homepage shows Underarms by default, so if Small prices change, also update the matching numbers in the price finder in `index.html`.

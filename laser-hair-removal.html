@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&display=swap">
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=7">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -72,7 +72,7 @@
 
 <header class="site-header">
   <div class="wrap header-bar">
-    <a class="brand" href="./"><img src="logo.png" alt="Relax &amp; Cruz Spa" width="276" height="162"></a>
+    <a class="brand" href="./"><img src="logo.png" alt="Relax &amp; Cruz Spa" width="276" height="162" decoding="async"></a>
     <nav class="nav" id="site-nav" aria-label="Main">
       <a href="laser-hair-removal" aria-current="page"><span class="nav-name">Laser</span><span class="nav-hint">every skin tone</span></a>
       <a href="electrolysis"><span class="nav-name">Electrolysis</span><span class="nav-hint">permanent, any hair</span></a>
@@ -84,8 +84,8 @@
     </nav>
     <div class="header-actions">
       <a class="header-phone" href="tel:+19547749833">(954) 774-9833</a>
-      <a class="btn btn-outline" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book now</a>
-      <a class="btn btn-plum" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book a free consult</a>
+      <a data-book="laser" class="btn btn-outline" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book now</a>
+      <a data-book="consult" class="btn btn-plum" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book a free consult</a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
@@ -100,10 +100,15 @@
     <div class="hero-copy">
       <p class="crumbs"><a href="./">Home</a> / Laser hair removal</p>
       <h1 class="h1">Two lasers in one machine, perfect for every shade of skin.</h1>
+      <ul class="trust" aria-label="Why clients trust us">
+        <li><span class="trust-stars" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><a href="https://www.google.com/maps/search/?api=1&amp;query=Relax%20%26%20Cruz%20Spa&amp;query_place_id=ChIJVxkaC0UH2YgR4lUdHG4DhzY" target="_blank" rel="noopener">4.8 stars from 162 Google reviews</a></li>
+        <li>Since 2019</li>
+        <li><a href="#licenses">Florida licensed</a></li>
+      </ul>
       <p class="lede">Crystal Cruz does every treatment herself, on a laser built for both lighter and deeper skin. Your settings are matched to your skin and your hair, not pulled from a preset.</p>
       <div class="btn-row">
-        <a class="btn btn-plum" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book a free consult</a>
-        <a class="btn btn-outline" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book now</a>
+        <a data-book="consult" class="btn btn-plum" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book a free consult</a>
+        <a data-book="laser" class="btn btn-outline" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book now</a>
         <a class="btn btn-outline" href="#prices">See every price</a>
       </div>
       <dl class="facts">
@@ -193,19 +198,19 @@
     </div>
     <div class="results results--four">
       <figure class="result">
-        <video src="legs-laser.mp4" poster="legs-laser.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Laser hair removal on a client's lower legs"></video>
+        <video data-src="legs-laser.mp4" poster="legs-laser.jpg" autoplay muted loop playsinline preload="none" aria-label="Laser hair removal on a client's lower legs"></video>
         <figcaption>Lower legs</figcaption>
       </figure>
       <figure class="result">
-        <video src="face-laser.mp4" poster="face-laser.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Laser hair removal on a client's chin and upper lip"></video>
+        <video data-src="face-laser.mp4" poster="face-laser.jpg" autoplay muted loop playsinline preload="none" aria-label="Laser hair removal on a client's chin and upper lip"></video>
         <figcaption>Chin and upper lip</figcaption>
       </figure>
       <figure class="result">
-        <video src="underarm-laser.mp4" poster="underarm-laser.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Laser hair removal on a client's underarm"></video>
+        <video data-src="underarm-laser.mp4" poster="underarm-laser.jpg" autoplay muted loop playsinline preload="none" aria-label="Laser hair removal on a client's underarm"></video>
         <figcaption>Underarms</figcaption>
       </figure>
       <figure class="result">
-        <video style="object-position: 30% 50%" src="jawline-laser.mp4" poster="jawline-laser.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Crystal giving a client laser hair removal along her jawline and neck"></video>
+        <video style="object-position: 30% 50%" data-src="jawline-laser.mp4" poster="jawline-laser.jpg" autoplay muted loop playsinline preload="none" aria-label="Crystal giving a client laser hair removal along her jawline and neck"></video>
         <figcaption>Jawline and neck</figcaption>
       </figure>
     </div>
@@ -215,19 +220,19 @@
     </div>
     <div class="results results--pairs">
       <figure class="result">
-        <img src="ba-chin-in-progress.jpg" alt="A woman's chin and neck covered in hair bumps before, and much clearer partway through laser" width="1000" height="730" loading="lazy">
+        <img src="ba-chin-in-progress.jpg" alt="A woman's chin and neck covered in hair bumps before, and much clearer partway through laser" width="1000" height="730" loading="lazy" decoding="async">
         <figcaption>Chin and neck, before and in progress</figcaption>
       </figure>
       <figure class="result">
-        <img src="ba-chin-4-treatments.jpg" alt="A woman's chin and neck covered in hair bumps before, and smoother skin after 4 laser treatments" width="980" height="720" loading="lazy">
+        <img src="ba-chin-4-treatments.jpg" alt="A woman's chin and neck covered in hair bumps before, and smoother skin after 4 laser treatments" width="980" height="720" loading="lazy" decoding="async">
         <figcaption>Chin and neck, after 4 laser treatments</figcaption>
       </figure>
       <figure class="result">
-        <img src="ba-chin-women.jpg" alt="Before and after laser hair removal on a woman's chin and jaw" width="1000" height="721" loading="lazy">
+        <img src="ba-chin-women.jpg" alt="Before and after laser hair removal on a woman's chin and jaw" width="1000" height="721" loading="lazy" decoding="async">
         <figcaption>Chin and jaw, before and after laser</figcaption>
       </figure>
       <figure class="result">
-        <img src="ba-chin-dark-skin.jpg" alt="A chin with coarse dark hairs before laser, and smooth skin after" width="1008" height="720" loading="lazy">
+        <img src="ba-chin-dark-skin.jpg" alt="A chin with coarse dark hairs before laser, and smooth skin after" width="1008" height="720" loading="lazy" decoding="async">
         <figcaption>Chin, before (left) and after (right)</figcaption>
       </figure>
     </div>
@@ -281,7 +286,7 @@
 <section class="section bg-tint">
   <div class="wrap split">
     <div>
-      <img class="photo leaf-rev about-frame about-video" style="object-position: 50% 0%" src="crystal-bio.jpg" alt="Crystal Cruz beside the spa's Candela GentleMax Pro Plus laser" width="720" height="956" loading="lazy">
+      <img class="photo leaf-rev about-frame about-video" style="object-position: 50% 0%" src="crystal-bio.jpg" alt="Crystal Cruz beside the spa's Candela GentleMax Pro Plus laser" width="720" height="956" loading="lazy" decoding="async">
     </div>
     <div class="stack" style="gap:24px">
       <h2 class="h2">Every session is with Crystal</h2>
@@ -330,12 +335,12 @@
   <div class="wrap">
     <div class="book-grid">
       <div class="stack" style="gap:24px">
-        <img src="logo-white.png" alt="" width="276" height="162" style="height:96px; width:auto; align-self:flex-start">
+        <img src="logo-white.png" alt="" width="276" height="162" style="height:96px; width:auto; align-self:flex-start" decoding="async">
         <h2 class="book-title">Start with a free consult.</h2>
         <p class="on-plum" style="font-size:20px; max-width:520px">Meet Crystal, learn your skin type, and leave with a plan and a price.</p>
         <div class="btn-row">
-          <a class="btn btn-leaf" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book a free consult</a>
-          <a class="btn btn-ghost" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book now</a>
+          <a data-book="consult" class="btn btn-leaf" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book a free consult</a>
+          <a data-book="laser" class="btn btn-ghost" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book now</a>
           <a class="btn btn-ghost" href="tel:+19547749833">Call (954) 774-9833</a>
         </div>
           <a class="cherry-note" href="https://pay.withcherry.com/relaxandcruzspa-llc">Pay over time with Cherry — as low as 0% interest for 12 months</a>
@@ -360,7 +365,7 @@
         <a href="contact">Contact</a>
       </nav>
       <p class="legal">Laser provides permanent hair reduction, and results vary by person. Electrolysis provides permanent hair removal.</p>
-      <p class="legal">Florida licenses: massage therapist MA 93506, massage establishment MM 41929, electrologist EO 4649, electrolysis facility EP 1453, facial specialist FB9770280, salon CE10030767.</p>
+      <p class="legal" id="licenses">Florida licenses: massage therapist MA 93506, massage establishment MM 41929, electrologist EO 4649, electrolysis facility EP 1453, facial specialist FB9770280, salon CE10030767.</p>
     </footer>
   </div>
 </section>
@@ -369,10 +374,10 @@
 
 <div class="mobile-bar">
   <a class="btn btn-outline" href="tel:+19547749833">Call</a>
-  <a class="btn btn-outline" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book now</a>
-  <a class="btn btn-plum" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Free consult</a>
+  <a data-book="laser" class="btn btn-outline" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book now</a>
+  <a data-book="consult" class="btn btn-plum" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Free consult</a>
 </div>
 
-<script src="main.js?v=3" defer></script>
+<script src="main.js?v=5" defer></script>
 </body>
 </html>

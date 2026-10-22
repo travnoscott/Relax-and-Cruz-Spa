@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&display=swap">
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=7">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -56,7 +56,7 @@
 
 <header class="site-header">
   <div class="wrap header-bar">
-    <a class="brand" href="./"><img src="logo.png" alt="Relax &amp; Cruz Spa" width="276" height="162"></a>
+    <a class="brand" href="./"><img src="logo.png" alt="Relax &amp; Cruz Spa" width="276" height="162" decoding="async"></a>
     <nav class="nav" id="site-nav" aria-label="Main">
       <a href="laser-hair-removal"><span class="nav-name">Laser</span><span class="nav-hint">every skin tone</span></a>
       <a href="electrolysis"><span class="nav-name">Electrolysis</span><span class="nav-hint">permanent, any hair</span></a>
@@ -68,8 +68,8 @@
     </nav>
     <div class="header-actions">
       <a class="header-phone" href="tel:+19547749833">(954) 774-9833</a>
-      <a class="btn btn-outline" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book now</a>
-      <a class="btn btn-plum" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book a free consult</a>
+      <a data-book="all" class="btn btn-outline" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book now</a>
+      <a data-book="consult" class="btn btn-plum" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book a free consult</a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
@@ -83,13 +83,17 @@
   <div class="hero-grid">
     <div class="hero-copy">
       <h1 class="h1">Hair removal for every shade of skin.</h1>
+      <ul class="trust" aria-label="Why clients trust us">
+        <li><span class="trust-stars" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><a href="https://www.google.com/maps/search/?api=1&amp;query=Relax%20%26%20Cruz%20Spa&amp;query_place_id=ChIJVxkaC0UH2YgR4lUdHG4DhzY" target="_blank" rel="noopener">4.8 stars from 162 Google reviews</a></li>
+        <li>Since 2019</li>
+        <li><a href="#licenses">Florida licensed</a></li>
+      </ul>
       <p class="lede">Crystal Cruz clears ingrowns, razor bumps and stubborn hair with a laser set for your skin type, not a preset.</p>
       <div class="btn-row">
-        <a class="btn btn-plum" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book a free consult</a>
-        <a class="btn btn-outline" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book now</a>
+        <a data-book="consult" class="btn btn-plum" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book a free consult</a>
+        <a data-book="all" class="btn btn-outline" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book now</a>
         <a class="btn btn-outline" href="#prices">Find your price</a>
       </div>
-      <p class="rating"><svg width="18" height="18" viewBox="0 0 24 24" fill="#872D68" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg>Rated 4.8 out of 5 across 162 Google reviews</p>
     </div>
     <div class="hero-media">
       <div class="hero-frame hero-frame--video">
@@ -207,7 +211,7 @@
       <p class="offer-price">$499</p>
       <h2 class="offer-title">A full year of unlimited laser hair removal for first-time clients</h2>
       <p class="on-plum" style="font-size:19px; max-width:480px">One flat price for a full year. Sessions are spread 6 to 8 weeks apart, the spacing hair needs between treatments.</p>
-      <a class="btn btn-leaf" style="align-self:flex-start" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Claim it at your free consult</a>
+      <a data-book="consult" class="btn btn-leaf" style="align-self:flex-start" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Claim it at your free consult</a>
       <p class="on-plum small" style="font-size:16px">First-time clients only. Offer subject to change.</p>
     </div>
     <div class="stack" style="gap:18px; padding-top:12px">
@@ -236,7 +240,7 @@
       <p class="muted" style="font-size:19px; max-width:480px">Pick one members-only special each month and choose it at your visit. Members also get priority booking and locked-in pricing.</p>
       <p class="muted" style="font-size:17px; max-width:480px">Laser areas are treated every 6 to 8 weeks, so if you pick laser two months in a row, we'll rotate to different areas.</p>
       <div class="offer-note leaf-sm" style="max-width:480px"><strong>Which one is for me?</strong> New to laser and focused on one or two areas? Start with the <a href="#offer">$499 year</a>. Want facials or massage too, or several laser areas? The membership is for you.</div>
-      <a class="btn btn-plum" style="align-self:flex-start" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Ask about membership</a>
+      <a data-book="consult" class="btn btn-plum" style="align-self:flex-start" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Ask about membership</a>
       <p class="muted" style="font-size:16px">Limited memberships available.</p>
     </div>
     <div class="stack" style="gap:18px; padding-top:12px" id="membership-details" data-fold="See the monthly choices and terms">
@@ -282,7 +286,7 @@
         <p class="muted" data-f="note" style="max-width:540px">One of the quickest areas to treat, and a common first area for new clients.</p>
         <p class="offer-note leaf-sm"><span data-f="offer">First visit? Underarms qualify for the $499 year, and you can add one of: upper lip, chin, sideburns, areolas, or hands and fingers.</span> <a href="#offer">See the $499 year</a></p>
         <div class="finder-cta">
-          <a class="btn btn-plum" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book this area</a>
+          <a data-book="laser-s" class="btn btn-plum" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book this area</a>
           <span class="small muted">Payment plans through <a href="https://pay.withcherry.com/relaxandcruzspa-llc">Cherry</a>, as low as 0% interest for up to 12 months.</span>
         </div>
         <p class="muted" style="font-size:16px">Prices subject to change.</p>
@@ -306,27 +310,27 @@
     </div>
     <div class="results" id="home-results" data-fold-after="3" data-fold-label="Show more before and after photos">
       <figure class="result">
-        <img src="ba-chin-4-treatments.jpg" alt="A woman's chin and neck covered in hair bumps before, and smoother skin after 4 laser treatments" width="980" height="720" loading="lazy">
+        <img src="ba-chin-4-treatments.jpg" alt="A woman's chin and neck covered in hair bumps before, and smoother skin after 4 laser treatments" width="980" height="720" loading="lazy" decoding="async">
         <figcaption>Chin and neck, after 4 laser treatments</figcaption>
       </figure>
       <figure class="result">
-        <img src="ba-chin-women.jpg" alt="Before and after laser hair removal on a woman's chin and jaw" width="1000" height="721" loading="lazy">
+        <img src="ba-chin-women.jpg" alt="Before and after laser hair removal on a woman's chin and jaw" width="1000" height="721" loading="lazy" decoding="async">
         <figcaption>Chin and jaw, before and after laser</figcaption>
       </figure>
       <figure class="result">
-        <img src="ba-chest-men.jpg" alt="A man's chest and stomach before and after laser hair removal" width="984" height="720" loading="lazy">
+        <img src="ba-chest-men.jpg" alt="A man's chest and stomach before and after laser hair removal" width="984" height="720" loading="lazy" decoding="async">
         <figcaption>Men's chest and stomach, before and after laser</figcaption>
       </figure>
       <figure class="result">
-        <img src="ba-head.jpg" alt="Back of a man's head before and after laser hair removal" width="923" height="663" loading="lazy">
+        <img src="ba-head.jpg" alt="Back of a man's head before and after laser hair removal" width="923" height="663" loading="lazy" decoding="async">
         <figcaption>Back of the head, before and after laser</figcaption>
       </figure>
       <figure class="result">
-        <img src="ba-beard-neck.jpg" alt="Neck below the beard line before and after laser hair removal" width="923" height="683" loading="lazy">
+        <img src="ba-beard-neck.jpg" alt="Neck below the beard line before and after laser hair removal" width="923" height="683" loading="lazy" decoding="async">
         <figcaption>Beard line and neck, before and after laser</figcaption>
       </figure>
       <figure class="result">
-        <img src="ba-chin-dark-skin.jpg" alt="A chin with coarse dark hairs before laser, and smooth skin after" width="1008" height="720" loading="lazy">
+        <img src="ba-chin-dark-skin.jpg" alt="A chin with coarse dark hairs before laser, and smooth skin after" width="1008" height="720" loading="lazy" decoding="async">
         <figcaption>Chin, before and after laser</figcaption>
       </figure>
     </div>
@@ -337,7 +341,7 @@
   <div class="wrap split">
     <div>
       <div class="about-frame about-video">
-        <video class="photo leaf-rev" id="intro-video" src="intro.mp4" poster="intro.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Crystal Cruz introduces herself and the spa"></video>
+        <video class="photo leaf-rev" id="intro-video" data-src="intro.mp4" poster="intro.jpg" autoplay muted loop playsinline preload="none" aria-label="Crystal Cruz introduces herself and the spa"></video>
         <button class="sound-btn" type="button" id="intro-sound" aria-pressed="false">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>
           <span>Tap for sound</span>
@@ -393,12 +397,12 @@
   <div class="wrap">
     <div class="book-grid">
       <div class="stack" style="gap:24px">
-        <img src="logo-white.png" alt="" width="276" height="162" style="height:96px; width:auto; align-self:flex-start">
+        <img src="logo-white.png" alt="" width="276" height="162" style="height:96px; width:auto; align-self:flex-start" decoding="async">
         <h2 class="book-title">Start with a free consult.</h2>
         <p class="on-plum" style="font-size:20px; max-width:520px">Meet Crystal, learn your skin type, and leave with a plan and a price.</p>
         <div class="btn-row">
-          <a class="btn btn-leaf" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book a free consult</a>
-          <a class="btn btn-ghost" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book now</a>
+          <a data-book="consult" class="btn btn-leaf" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book a free consult</a>
+          <a data-book="all" class="btn btn-ghost" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book now</a>
           <a class="btn btn-ghost" href="tel:+19547749833">Call (954) 774-9833</a>
         </div>
           <a class="cherry-note" href="https://pay.withcherry.com/relaxandcruzspa-llc">Pay over time with Cherry — as low as 0% interest for 12 months</a>
@@ -423,7 +427,7 @@
         <a href="contact">Contact</a>
       </nav>
       <p class="legal">Laser provides permanent hair reduction, and results vary by person. Electrolysis provides permanent hair removal.</p>
-      <p class="legal">Florida licenses: massage therapist MA 93506, massage establishment MM 41929, electrologist EO 4649, electrolysis facility EP 1453, facial specialist FB9770280, salon CE10030767.</p>
+      <p class="legal" id="licenses">Florida licenses: massage therapist MA 93506, massage establishment MM 41929, electrologist EO 4649, electrolysis facility EP 1453, facial specialist FB9770280, salon CE10030767.</p>
     </footer>
   </div>
 </section>
@@ -432,10 +436,10 @@
 
 <div class="mobile-bar">
   <a class="btn btn-outline" href="tel:+19547749833">Call</a>
-  <a class="btn btn-outline" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book now</a>
-  <a class="btn btn-plum" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Free consult</a>
+  <a data-book="all" class="btn btn-outline" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book now</a>
+  <a data-book="consult" class="btn btn-plum" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Free consult</a>
 </div>
 
-<script src="main.js?v=3" defer></script>
+<script src="main.js?v=5" defer></script>
 </body>
 </html>

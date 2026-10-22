@@ -1,6 +1,32 @@
-// Relax & Cruz Spa. Mobile menu and price finder.
+// Relax & Cruz Spa. Booking links, mobile menu and price finder.
 
 (function () {
+  // Booking links. Every Book button on the site says which service it books, with
+  // data-book="…". To send those buttons straight to one service in Square, paste that
+  // service's own Square booking link between the quotes next to its name. Anything left
+  // empty opens the full booking list, so a missing link never breaks a button.
+  var BOOK_ALL = 'https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services';
+  var BOOKING = {
+    'consult': '',           // Free Consultation (every "Book a free consult" button)
+    'laser': '',             // Laser hair removal, any size (laser, ingrown hair and men's pages)
+    'laser-xs': '',          // Laser: Extra-Small Areas (price finder, "Book this area")
+    'laser-s': '',           // Laser: Small Areas
+    'laser-m': '',           // Laser: Medium Areas
+    'laser-l': '',           // Laser: Large Areas
+    'laser-xl': '',          // Laser: Extra-Large Areas
+    'laser-fb': '',          // Laser: Full Body
+    'electrolysis': '',      // Electrolysis (Permanent Hair Removal)
+    'facials': '',           // Facials and Peels
+    'lymphatic': '',         // Post-Op Lymphatic Massage
+    'massage': '',           // Swedish Massage
+    'body-contouring': '',   // Body Contouring
+    'all': ''                // Homepage, contact and shop buttons: keep empty for the full list
+  };
+  var bookLink = function (key) { return BOOKING[key] || BOOK_ALL; };
+  document.querySelectorAll('a[data-book]').forEach(function (a) {
+    a.href = bookLink(a.getAttribute('data-book'));
+  });
+
   // Mobile menu
   var toggle = document.querySelector('.menu-toggle');
   var nav = document.getElementById('site-nav');
@@ -60,6 +86,7 @@
   if (intro && sound) {
     sound.addEventListener('click', function () {
       if (intro.muted) {
+        if (!intro.getAttribute('src') && intro.dataset.src) intro.src = intro.dataset.src;
         intro.muted = false;
         intro.loop = false;
         intro.currentTime = 0;
@@ -110,7 +137,6 @@
   // After that, a small "saved" tab stays in the corner of every page to bring it back.
   // "No thanks" hides both for the rest of the visit. Everything stops once PROMO_ENDS passes.
   var PROMO_ENDS = new Date(2026, 10, 1); // midnight starting November 1, 2026
-  var BOOK = 'https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services';
   var base = (document.currentScript && document.currentScript.src || '').replace(/main\.js.*$/, '');
   var store = function (key, val) {
     try {
@@ -135,7 +161,7 @@
         '<div class="promo-body">' +
           '<h2 class="promo-title" id="promo-title">Smooth skin season is here. <em>Treat yourself.</em></h2>' +
           '<p class="promo-text">Good on any 4, 8 or 12 session laser hair removal package. No more razor bumps, no more waxing appointments.</p>' +
-          '<a class="btn btn-leaf promo-cta" href="' + BOOK + '">Claim my offer <span class="promo-arrow" aria-hidden="true">&rarr;</span></a>' +
+          '<a class="btn btn-leaf promo-cta" data-book="consult" href="' + bookLink('consult') + '">Claim my offer <span class="promo-arrow" aria-hidden="true">&rarr;</span></a>' +
           '<p class="promo-how">Book your free consult and mention this offer.</p>' +
           '<div class="promo-links">' +
             '<a class="promo-link" href="' + base + 'laser-hair-removal#prices">See package prices</a>' +
@@ -223,6 +249,7 @@
 
   var fields = {};
   panel.querySelectorAll('[data-f]').forEach(function (el) { fields[el.getAttribute('data-f')] = el; });
+  var bookArea = panel.querySelector('a[data-book]');
 
   function show(i) {
     var a = AREAS[i];
@@ -237,6 +264,10 @@
     fields.per.textContent = t.per;
     fields.note.textContent = a.note;
     fields.offer.textContent = a.offer;
+    if (bookArea) {
+      bookArea.setAttribute('data-book', 'laser-' + a.tier);
+      bookArea.href = bookLink('laser-' + a.tier);
+    }
     list.querySelectorAll('.area-btn').forEach(function (b) {
       b.setAttribute('aria-pressed', Number(b.getAttribute('data-area')) === i ? 'true' : 'false');
     });
@@ -255,10 +286,28 @@
 })();
 
 // Pause buttons for the looping videos. Videos stay still for visitors who ask for reduced motion.
+// Videos below the top of the page (data-src) only download when they're about to scroll into
+// view, and every video pauses while it's off screen, which keeps phones fast and saves data.
 (function () {
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var PAUSE = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
   var PLAY = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>';
+  var onScreen = 'IntersectionObserver' in window ? new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      var v = e.target;
+      if (e.isIntersecting) {
+        if (reduce) return;
+        if (!v.getAttribute('src') && v.dataset.src) v.src = v.dataset.src;
+        if (v.paused && !v.dataset.userPaused) {
+          var playing = v.play();
+          if (playing && playing.catch) playing.catch(function () {});
+        }
+      } else if (!v.paused) {
+        v.pause();
+      }
+    });
+  }, { rootMargin: '300px 0px' }) : null;
+
   document.querySelectorAll('video[autoplay]').forEach(function (v) {
     var host = v.parentElement;
     if (!host.matches('.hero-frame, .result, .about-video')) {
@@ -277,12 +326,21 @@
       btn.setAttribute('aria-label', paused ? 'Play video' : 'Pause video');
     };
     btn.addEventListener('click', function () {
-      if (v.paused) { v.play(); } else { v.pause(); }
+      if (v.paused) {
+        if (!v.getAttribute('src') && v.dataset.src) v.src = v.dataset.src;
+        delete v.dataset.userPaused;
+        v.play();
+      } else {
+        v.dataset.userPaused = '1';
+        v.pause();
+      }
     });
     v.addEventListener('play', sync);
     v.addEventListener('pause', sync);
     if (reduce) { v.autoplay = false; v.pause(); }
     sync();
+    if (onScreen) onScreen.observe(v);
+    else if (!reduce && !v.getAttribute('src') && v.dataset.src) v.src = v.dataset.src;
   });
 })();
 
@@ -316,5 +374,40 @@
       var first = extra[0].querySelector('img, video');
       if (first && phone.matches) { first.setAttribute('tabindex', '-1'); first.focus({ preventScroll: true }); }
     });
+  });
+})();
+
+// Gentle reveal: columns, cards and photos rise into place as they scroll into view.
+// Groups of cards arrive one after another. The top of each page, and anything already
+// on screen when the page opens, stays put. Off for visitors who ask for reduced motion.
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var GROUPS = '.results > *, .menu-group, .steps > li, .faq-list > *, .cross-links > *, ' +
+    '.service-row, .offer-card, .price-box, .creds > li, .services > *';
+  var items = [].slice.call(document.querySelectorAll('main .section ' + GROUPS.split(', ').join(', main .section ')));
+  var columns = [].slice.call(document.querySelectorAll('main .section > .wrap > *')).filter(function (col) {
+    return !items.some(function (it) { return col.contains(it); });
+  });
+  var targets = columns.concat(items).filter(function (el) {
+    return !el.closest('.page-hero, .hero') && el.getBoundingClientRect().top > window.innerHeight;
+  });
+
+  var seen = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('is-in');
+      seen.unobserve(e.target);
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0 });
+
+  targets.forEach(function (el) {
+    var siblings = [].slice.call(el.parentElement.children).filter(function (s) { return targets.indexOf(s) > -1; });
+    var order = siblings.indexOf(el);
+    if (order > 0) el.style.transitionDelay = Math.min(order, 4) * 90 + 'ms';
+    if (el.querySelector('img, video') && !el.querySelector('h2, h3, p')) el.classList.add('reveal-media');
+    el.classList.add('reveal');
+    seen.observe(el);
   });
 })();

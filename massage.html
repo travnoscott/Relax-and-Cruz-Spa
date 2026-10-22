@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&display=swap">
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=7">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -93,7 +93,7 @@
 
 <header class="site-header">
   <div class="wrap header-bar">
-    <a class="brand" href="./"><img src="logo.png" alt="Relax &amp; Cruz Spa" width="276" height="162"></a>
+    <a class="brand" href="./"><img src="logo.png" alt="Relax &amp; Cruz Spa" width="276" height="162" decoding="async"></a>
     <nav class="nav" id="site-nav" aria-label="Main">
       <a href="laser-hair-removal"><span class="nav-name">Laser</span><span class="nav-hint">every skin tone</span></a>
       <a href="electrolysis"><span class="nav-name">Electrolysis</span><span class="nav-hint">permanent, any hair</span></a>
@@ -105,8 +105,8 @@
     </nav>
     <div class="header-actions">
       <a class="header-phone" href="tel:+19547749833">(954) 774-9833</a>
-      <a class="btn btn-outline" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book now</a>
-      <a class="btn btn-plum" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book a free consult</a>
+      <a data-book="massage" class="btn btn-outline" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book now</a>
+      <a data-book="consult" class="btn btn-plum" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book a free consult</a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
@@ -121,9 +121,14 @@
     <div class="hero-copy">
       <p class="crumbs"><a href="./">Home</a> / Swedish massage</p>
       <h1 class="h1">Time to actually relax.</h1>
+      <ul class="trust" aria-label="Why clients trust us">
+        <li><span class="trust-stars" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><a href="https://www.google.com/maps/search/?api=1&amp;query=Relax%20%26%20Cruz%20Spa&amp;query_place_id=ChIJVxkaC0UH2YgR4lUdHG4DhzY" target="_blank" rel="noopener">4.8 stars from 162 Google reviews</a></li>
+        <li>Since 2019</li>
+        <li><a href="#licenses">Florida licensed</a></li>
+      </ul>
       <p class="lede">A Swedish massage uses long, gliding strokes and lighter pressure to ease stress, stiffness and sore muscles, from your neck and back to your hands and feet.</p>
       <div class="btn-row">
-        <a class="btn btn-plum" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book a massage</a>
+        <a data-book="massage" class="btn btn-plum" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book a massage</a>
         <a class="btn btn-outline" href="#menu">See options</a>
       </div>
       <dl class="facts">
@@ -196,11 +201,11 @@
   <div class="wrap">
     <div class="book-grid">
       <div class="stack" style="gap:24px">
-        <img src="logo-white.png" alt="" width="276" height="162" style="height:96px; width:auto; align-self:flex-start">
+        <img src="logo-white.png" alt="" width="276" height="162" style="height:96px; width:auto; align-self:flex-start" decoding="async">
         <h2 class="book-title">Book your massage.</h2>
         <p class="on-plum" style="font-size:20px; max-width:520px">Pick 30, 60 or 90 minutes, and add CBD oil if you like.</p>
         <div class="btn-row">
-          <a class="btn btn-leaf" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book a massage</a>
+          <a data-book="massage" class="btn btn-leaf" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book a massage</a>
           <a class="btn btn-ghost" href="tel:+19547749833">Call (954) 774-9833</a>
         </div>
       </div>
@@ -224,7 +229,7 @@
         <a href="contact">Contact</a>
       </nav>
       <p class="legal">Laser provides permanent hair reduction, and results vary by person. Electrolysis provides permanent hair removal.</p>
-      <p class="legal">Florida licenses: massage therapist MA 93506, massage establishment MM 41929, electrologist EO 4649, electrolysis facility EP 1453, facial specialist FB9770280, salon CE10030767.</p>
+      <p class="legal" id="licenses">Florida licenses: massage therapist MA 93506, massage establishment MM 41929, electrologist EO 4649, electrolysis facility EP 1453, facial specialist FB9770280, salon CE10030767.</p>
     </footer>
   </div>
 </section>
@@ -233,9 +238,9 @@
 
 <div class="mobile-bar">
   <a class="btn btn-outline" href="tel:+19547749833">Call</a>
-  <a class="btn btn-plum" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book a massage</a>
+  <a data-book="massage" class="btn btn-plum" href="https://book.squareup.com/appointments/5c3y8w34fg9goo/location/LR7VH9PK37BJG/services">Book a massage</a>
 </div>
 
-<script src="main.js?v=3" defer></script>
+<script src="main.js?v=5" defer></script>
 </body>
 </html>
